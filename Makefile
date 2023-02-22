@@ -1,3 +1,5 @@
+NAME = push_swap
 CFLAGS = -g -Wall -Werror -Wextra
-LIBFTPRINTF = printf/libftprintf.a
-push_swap: $(LIBFTPRINTF)
+PRINTF = ./printf/libftprintf.a
+LIBFT = ./libft/libft.a
+push_swap: $(PRINTF)
