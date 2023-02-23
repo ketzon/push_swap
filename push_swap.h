@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:51 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/23 14:34:07 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/02/23 14:52:06 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-struct	s_vars {
+typedef struct	s_vars {
 int	stack;
 } t_vars;
 
