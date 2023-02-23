@@ -6,13 +6,13 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:46 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/22 17:00:55 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/02/23 14:34:31 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main()
+int	main(int ac, int **av)
 {
 	ft_printf("test\n");
 	printf("test2\n");

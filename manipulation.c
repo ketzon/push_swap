@@ -1,26 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   manipulation.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 12:43:51 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/23 14:34:07 by fbesson          ###   ########.fr       */
+/*   Created: 2023/02/23 14:29:19 by fbesson           #+#    #+#             */
+/*   Updated: 2023/02/23 14:29:30 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include "./libft/printf.h"
-# include "./libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-
-struct	s_vars {
-int	stack;
-} t_vars;
-
-#endif
+#include "push_swap.h"

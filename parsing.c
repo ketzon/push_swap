@@ -1,26 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 12:43:51 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/23 14:34:07 by fbesson          ###   ########.fr       */
+/*   Created: 2023/02/23 14:31:31 by fbesson           #+#    #+#             */
+/*   Updated: 2023/02/23 14:43:00 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
 
-# include "./libft/printf.h"
-# include "./libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-
-struct	s_vars {
-int	stack;
-} t_vars;
-
-#endif
