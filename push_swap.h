@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:51 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/23 15:05:23 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/02/27 14:10:54 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+
+void	ft_parse_input(char **av);
+int	ft_exit_msg(int fd, char *msg, int len, int status);
 
 typedef struct	s_vars {
 int	stack_a;
