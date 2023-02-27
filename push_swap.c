@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:46 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/27 14:11:28 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/02/27 15:09:14 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int	main(int ac, char **av)
 {
-	if (ac > 1)
-		ft_parse_input(av);
+	if (ac == 1)
+		return (0);
+	ft_parse_input(av);
+	ft_parse_size(av);
+	
 }
 

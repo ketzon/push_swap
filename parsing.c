@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:31:31 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/27 14:47:15 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/02/27 15:17:29 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,20 @@ void	ft_parse_input(char **av)
 		}
 		i++;
 	}
+}
+
+void	ft_parse_size(char **av)
+{
+	unsigned int i;
+	ssize_t	v;
+
+	i = 1;
+	while (av[i] != NULL)
+	{
+		v = ft_atoi(av[i]);
+		if (v > INT_MAX || v < INT_MIN)
+			ft_exit_msg(2, "Error\n", 6, 1);
+		i++;
+	}
+	return ;
 }
