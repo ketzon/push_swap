@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:46 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/27 15:09:14 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/02/28 15:41:29 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 int	main(int ac, char **av)
 {
-	if (ac == 1)
-		return (0);
-	ft_parse_input(av);
-	ft_parse_size(av);
-	
+	t_push **sort_list;
+	sort_list = malloc(sizeof(t_push *));
+	if (sort_list == NULL || ac == 1)
+		return (1);
+	ft_check_input(av);
+	ft_check_size(av);
+	ft_parse_input(av, sort_list);
+	char test[] = "parsing_test\n";
+	ft_exit_msg(2, "test", ft_strlen(test), 1);
+	return (0);
 }
 

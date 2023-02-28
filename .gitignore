@@ -1,3 +1,5 @@
-*.[oa]
+*.o
+*.a
+push_swap
 tags
 

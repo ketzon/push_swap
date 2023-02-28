@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:51 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/27 15:16:51 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/02/28 15:38:56 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,21 @@ enum size {
     INT_MIN = -2147483648
 };
 
-void	ft_parse_input(char **av);
-int	ft_exit_msg(int fd, char *msg, int len, int status);
-void	ft_parse_size(char **av);	
+typedef struct s_push 
+{
+	struct s_push *next;
+	struct s_push *prev;
+	int	i;
+	int	v;
+}	t_push;
 
-typedef struct	s_vars {
-int	stack_a;
-} t_vars;
+void	ft_check_input(char **av);
+int	ft_exit_msg(int fd, char *msg, int len, int status);
+void	ft_check_size(char **av);	
+void	ft_parse_input(char **av, t_push **sort_list);
+t_push 	*ft_create_node(int v, int i);
+void	ft_add_node(t_push **list, t_push *node);
+void	ft_parse_input(char **av, t_push **sort_list);
+
 
 #endif
