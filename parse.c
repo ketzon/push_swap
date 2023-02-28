@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 12:22:30 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/28 15:25:54 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/02/28 15:59:46 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,17 @@ t_push	*ft_create_node(int v, int i)
 
 void	ft_add_node(t_push **list, t_push *node)
 {
-	t_push	*ptr;
+	t_push	*temp;
 
 	if (*list == NULL)
 		*list = node;
 	else
 	{
-		ptr = *list;
-		while (ptr->next != NULL)
-			ptr = ptr->next;
-		ptr->next = node;
-		node->prev = ptr;
+		temp = *list;
+		while (temp->next != NULL)
+			temp = temp->next;
+		temp->next = node;
+		node->prev = temp;
 	}
 }
 
