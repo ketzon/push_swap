@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:31:31 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/27 15:26:05 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/07 17:35:48 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@ void	ft_check_input(char **av)
 		}
 		i++;
 	}
+	return ;
 }
 
 void	ft_check_size(char **av)
 {
 	unsigned int i;
-	ssize_t	v;
+	ssize_t	value;
 
 	i = 1;
 	while (av[i] != NULL)
 	{
-		v = (long int)ft_atoi(av[i]);
-		if (v > INT_MAX || v < INT_MIN)
+		value = (long int)ft_atoi(av[i]);
+		if (value > INT_MAX || value < INT_MIN)
 			ft_exit_msg(2, "Error\n", 6, 1);
 		i++;
 	}
-	return ;
 }

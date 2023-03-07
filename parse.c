@@ -6,20 +6,20 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 12:22:30 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/28 15:59:46 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/07 17:35:48 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_push	*ft_create_node(int v, int i)
+t_push	*ft_create_node(int value, int i)
 {
 	t_push	*ptr;
 
 	ptr = (t_push *)malloc(sizeof(t_push));
 	if (ptr == NULL)
 		return (NULL);
-	ptr->v = v;
+	ptr->value = value;
 	ptr->i = i;
 	ptr->next = NULL;
 	ptr->prev = NULL;
