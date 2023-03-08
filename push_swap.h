@@ -40,7 +40,7 @@ void	ft_add_node(t_push **list, t_push *node);
 void	ft_parse_input(char **av, t_push **sort_list);
 t_push	*ft_last_node(t_push *list);
 void	ft_swap_node(t_push *left, t_push *right);
-t_push	*ft_create_part(t_push *start, t_push *end);
+t_push	*partition(t_push *start, t_push *end);
 int	ft_quick_sort(t_push *start, t_push *end);
 
 #endif
