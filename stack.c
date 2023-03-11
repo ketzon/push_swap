@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:06:29 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/11 14:45:46 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/11 15:18:44 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,26 @@ void	ft_add_stack_node(t_stack **list, t_stack *node)
 	}
 }
 
-void	ft_parse_stack(char **av, t_stack **a, t_push *sort_list);
+void	ft_parse_stack(char **av, t_stack **a, t_push *sort_list)
 {
 	int	i;
-	t_push	*temp;
+	t_push	*begin;
 
 	i = 1;
 	*a = NULL;
-	temp = sort_list;
+	begin = sort_list;
 	while (av[i])
 	{
+		sort_list = begin;
+		while (sort_list != NULL && sort_list->value != ft_atoi(av[i]))
+			sort_list = sort_list->next;
+		ft_add_stack_node(a, ft_create_stack_node(sort_list->i));
 		i++;
+	}
+	while (begin != NULL)
+	{
+		begin->value = begin->i;
+		begin = begin->next;
+		printf("dess");
 	}
 }

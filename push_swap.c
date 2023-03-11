@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:46 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/11 14:13:15 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/11 15:17:54 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 
 	a = (t_stack **)malloc(sizeof(t_stack *));
 	sort_list = (t_push **)malloc(sizeof(t_push *));
-	if (sort_list == NULL || a || == NULL || ac == 1)
+	if (sort_list == NULL || a == NULL || ac == 1)
 		return (1);
 	ft_check_input(av);
 	ft_check_size(av);
