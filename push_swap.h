@@ -43,4 +43,5 @@ void	ft_swap_node(t_push *left, t_push *right);
 t_push	*partition(t_push *start, t_push *end);
 int	ft_quick_sort(t_push *start, t_push *end);
 
+
 #endif
