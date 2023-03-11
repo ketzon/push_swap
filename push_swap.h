@@ -35,10 +35,10 @@ typedef struct s_push
 typedef struct s_stack
 {
 	struct s_stack *next;
-	int	sum;
 	int	a_count;	
 	int	b_count;
 	int	value;
+	int	sum;
 }	t_stack;
 
 void	ft_check_input(char **av);
@@ -52,6 +52,6 @@ t_push	*ft_last_node(t_push *list);
 void	ft_swap_node(t_push *left, t_push *right);
 t_push	*partition(t_push *start, t_push *end);
 int	ft_quick_sort(t_push *start, t_push *end);
-
+void	ft_parse_stack(char **av, t_stack **a, t_push *sort_list);
 
 #endif
