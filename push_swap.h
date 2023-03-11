@@ -31,6 +31,16 @@ typedef struct s_push
 	int	value;
 }	t_push;
 
+
+typedef struct s_stack
+{
+	struct s_stack *next;
+	int	sum;
+	int	a_count;	
+	int	b_count;
+	int	value;
+}	t_stack;
+
 void	ft_check_input(char **av);
 int	ft_exit_msg(int fd, char *msg, int len, int status);
 void	ft_check_size(char **av);	
