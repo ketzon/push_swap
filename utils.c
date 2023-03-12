@@ -6,9 +6,9 @@ int	ft_exit_msg(int fd, char *msg, int len, int status)
 	exit (status);
 }
 
-t_push	*ft_last_node(t_push *list)
+t_push	*ft_last_node(t_push *node)
 {
-	while (list->next != NULL)
-		list = list->next;
-	return (list);
+	while (node->next != NULL)
+		node = node->next;
+	return (node);
 }

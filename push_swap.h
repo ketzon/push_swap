@@ -41,17 +41,17 @@ typedef struct s_stack
 	int	sum;
 }	t_stack;
 
-void	ft_check_input(char **av);
-int	ft_exit_msg(int fd, char *msg, int len, int status);
-void	ft_check_size(char **av);	
-void	ft_parse_input(char **av, t_push **sort_list);
-t_push 	*ft_create_node(int value, int i);
-void	ft_add_node(t_push **list, t_push *node);
-void	ft_parse_input(char **av, t_push **sort_list);
-t_push	*ft_last_node(t_push *list);
-void	ft_swap_node(t_push *left, t_push *right);
-t_push	*partition(t_push *start, t_push *end);
-int	ft_quick_sort(t_push *start, t_push *end);
 void	ft_parse_stack(char **av, t_stack **a, t_push *sort_list);
+int	ft_exit_msg(int fd, char *msg, int len, int status);
+void	ft_parse_input(char **av, t_push **sort_list);
+void	ft_parse_input(char **av, t_push **sort_list);
+t_push	*ft_partition(t_push *start, t_push *end);
+int	ft_quick_sort(t_push *start, t_push *end);
+void	ft_swap_node(t_push *left, t_push *right);
+void	ft_add_node(t_push **list, t_push *node);
+t_push 	*ft_create_node(int value, int i);
+t_push	*ft_last_node(t_push *node);
+void	ft_check_input(char **av);
+void	ft_check_size(char **av);	
 
 #endif
