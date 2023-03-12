@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:46 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/11 15:17:54 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/12 12:06:07 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int ac, char **av)
 	ft_parse_input(av, sort_list);
 	ft_quick_sort(*sort_list, ft_last_node(*sort_list));
 	ft_parse_stack(av, a, *sort_list);
+	ft_check_stack(ac, *a);
 	return (0);
 }
 

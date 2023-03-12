@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:31:31 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/07 17:35:48 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/12 12:08:22 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	ft_check_input(char **av)
 		}
 		i++;
 	}
-	return ;
 }
 
 void	ft_check_size(char **av)
@@ -48,4 +47,23 @@ void	ft_check_size(char **av)
 			ft_exit_msg(2, "Error\n", 6, 1);
 		i++;
 	}
+}
+
+int	ft_check_stack(int ac, t_stack *a)
+{
+	int	min;
+
+	if (ac == 2)
+		exit(0);
+	min = a->value;
+	while (a->next != NULL)
+	{
+		if (min > a->next->value)
+			return (0);
+		else if (min == a->next->value)
+			ft_exit_msg(2, "Error\n", 6, 1);
+		a = a->next;
+		min = a->value;
+	}
+	exit(0);
 }
