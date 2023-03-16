@@ -41,7 +41,14 @@ typedef struct s_stack
 	int	sum;
 }	t_stack;
 
+typedef struct s_cmd
+{
+	struct s_cmd *next;
+	char	*str;
+}	t_cmd;
+
 void	ft_parse_stack(char **av, t_stack **a, t_push *sort_list);
+void	ft_sort_low(t_cmd **cmd, t_stack **a, t_stack **b, int ac);
 int	ft_exit_msg(int fd, char *msg, int len, int status);
 void	ft_parse_input(char **av, t_push **sort_list);
 void	ft_parse_input(char **av, t_push **sort_list);

@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:52:01 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/08 15:15:01 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/16 16:51:32 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,5 @@ int	ft_quick_sort(t_push *start, t_push *end)
 		ft_quick_sort(start, pivot->prev);
 	if (pivot->next != NULL)
 		ft_quick_sort(pivot->next, end);
-	printf("hello\n");
 	return (0);
 }
