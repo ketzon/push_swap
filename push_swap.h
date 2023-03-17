@@ -47,11 +47,11 @@ typedef struct s_cmd
 	char	*str;
 }	t_cmd;
 
-void	ft_sort_under_seven(t_cmd **cmd, t_stack **a, t_stack **b, int ac);
-void	ft_sort_low(t_cmd **cmd, t_stack **a, t_stack **b, int ac);
+void	ft_sort_five(t_cmd **cmd, t_stack *a, t_stack *b, int ac);
 void	ft_parse_stack(char **av, t_stack **a, t_push *sort_list);
 int	ft_exit_msg(int fd, char *msg, int len, int status);
 void	push_b(t_cmd **cmd, t_stack **a, t_stack **b);
+void	push_a(t_cmd **cmd, t_stack **a, t_stack **b);
 void	ft_parse_input(char **av, t_push **sort_list);
 void	ft_parse_input(char **av, t_push **sort_list);
 t_push	*ft_partition(t_push *start, t_push *end);
@@ -65,6 +65,13 @@ t_push	*ft_last_node(t_push *node);
 void	ft_check_input(char **av);
 void	ft_print_cmd(t_cmd **av);
 void	ft_check_size(char **av);	
+int	swap_a(t_cmd **cmd, t_stack *a);
+int	swap_b(t_cmd **cmd, t_stack *b);
+int	rot_a(t_cmd **cmd, t_stack a);
+int	rot_b(t_cmd **cmd, t_stack b);
+int	rrot_a(t_cmd **cmd, t_stack a);
+int	rrot_b(t_cmd **cmd, t_stack b);
+
 /* void	test(char *str); */
 
 #endif
