@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:35:43 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/16 18:48:07 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/17 10:01:18 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	ft_print_cmd(t_cmd **cmd)
 		ptr = ptr->next;
 	}
 }
-
-
 
 void	ft_cmd_node(t_cmd **cmd, char *moove)
 {
