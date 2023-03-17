@@ -28,6 +28,8 @@ typedef struct s_push
 	struct s_push *next;
 	struct s_push *prev;
 	int	i;
+	int	pivot1;
+	int	pivot2;
 	int	value;
 }	t_push;
 
@@ -67,10 +69,12 @@ void	ft_print_cmd(t_cmd **av);
 void	ft_check_size(char **av);	
 int	swap_a(t_cmd **cmd, t_stack *a);
 int	swap_b(t_cmd **cmd, t_stack *b);
-int	rot_a(t_cmd **cmd, t_stack a);
-int	rot_b(t_cmd **cmd, t_stack b);
-int	rrot_a(t_cmd **cmd, t_stack a);
-int	rrot_b(t_cmd **cmd, t_stack b);
+int	rot_a(t_cmd **cmd, t_stack **a);
+int	rot_b(t_cmd **cmd, t_stack **b);
+int	rrot_a(t_cmd **cmd, t_stack **a);
+int	rrot_b(t_cmd **cmd, t_stack **b);
+int	rrot_ab(t_cmd **cmd, t_stack **a, t_stack **b); 
+void	ft_push_swap(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list);
 
 /* void	test(char *str); */
 
