@@ -20,3 +20,5 @@ int	ft_abs(int v)
 	else
 		return (v);
 }
+
+//faire atoi qui gere les long int
