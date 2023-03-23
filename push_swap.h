@@ -49,11 +49,11 @@ typedef struct s_cmd
 	char	*str;
 }	t_cmd;
 
-void	ft_sort_five(t_cmd **cmd, t_stack *a, t_stack *b, int ac);
+void	ft_sort_five(t_cmd **cmd, t_stack **a, t_stack **b, int ac);
 void	ft_parse_stack(char **av, t_stack **a, t_push *sort_list);
 int	ft_exit_msg(int fd, char *msg, int len, int status);
-void	push_b(t_cmd **cmd, t_stack **a, t_stack **b);
-void	push_a(t_cmd **cmd, t_stack **a, t_stack **b);
+int	push_b(t_cmd **cmd, t_stack **a, t_stack **b);
+int	push_a(t_cmd **cmd, t_stack **a, t_stack **b);
 void	ft_parse_input(char **av, t_push **sort_list);
 void	ft_parse_input(char **av, t_push **sort_list);
 t_push	*ft_partition(t_push *start, t_push *end);
@@ -75,6 +75,15 @@ int	rrot_a(t_cmd **cmd, t_stack **a);
 int	rrot_b(t_cmd **cmd, t_stack **b);
 int	rrot_ab(t_cmd **cmd, t_stack **a, t_stack **b); 
 void	ft_push_swap(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list);
+void	ft_division(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list);
+void	ft_sort_low(t_cmd **cmd, t_stack **a, t_stack **b, int ac);
+int	ft_find_target(t_stack *a, int b);
+int	ft_check_max_min(t_stack *a, int b);
+int	ft_calc_rot_a(t_stack *a, int target);
+void	ft_calc_rot_b(t_stack *b);
+void	ft_rot_stack(t_cmd **cmd, t_stack **a, t_stack **b);
+t_stack *find_min_count(t_stack *b);
+int	ft_abs(int v);
 
 /* void	test(char *str); */
 

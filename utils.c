@@ -12,3 +12,11 @@ t_push	*ft_last_node(t_push *node)
 		node = node->next;
 	return (node);
 }
+
+int	ft_abs(int v)
+{
+	if (v < 0)
+		return (-v);
+	else
+		return (v);
+}
