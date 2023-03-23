@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:30:53 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/23 15:28:38 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/23 17:21:56 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,11 +146,9 @@ void	ft_push_swap(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list)
 	int	rotation_value;
 	if (*b == NULL)
 	{
-		char *str = "didn't handle";
-		ft_exit_msg (1, str, ft_strlen(str), 1);
-		/* ft_division(cmd, a, b, sort_list); */
-		/* if (*a == NULL) */
-		/* 	push_a(cmd, a, b); */
+		ft_division(cmd, a, b, sort_list);
+		if (*a == NULL)
+			push_a(cmd, a, b);
 	}
 	while (*b != NULL)
 		ft_sort_stack(cmd, a, b);
