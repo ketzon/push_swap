@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:30:53 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/24 12:57:40 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/24 20:37:53 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ int	ft_check_max_min(t_stack *a, int b)
 int	ft_find_target(t_stack *a, int b)
 {
 	int	min;
-	int	current;
 	int	begin;
 
 	min = ft_check_max_min(a, b);
@@ -105,9 +104,8 @@ int	ft_find_target(t_stack *a, int b)
 			return (a->next->value);
 		a = a->next;
 	}
-	current = a->value;
-	if (begin < current)
-		return (current);
+	if (begin < a->value)
+		return (a->value);
 	else
 		return (begin);
 }

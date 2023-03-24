@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:35:43 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/24 12:56:36 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/24 20:51:37 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	ft_cmd_node(t_cmd **cmd, char *moove)
 	t_cmd	*node;
 	t_cmd	*ptr;
 
-	node = malloc(sizeof(t_cmd));
-	if (!node)
+	node = (t_cmd *)malloc(sizeof(t_cmd));
+	if (node == NULL)
 		exit(0);
 	node->str = moove;
 	node->next = NULL;

@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:31:31 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/24 15:47:07 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/24 20:33:09 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void	ft_check_input(char **av)
 			ft_exit_msg(2, "Error\n", 6, 1);
 	}
 }
-
 
 void	ft_check_size(char **av)
 {
