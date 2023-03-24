@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:35:43 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/17 10:01:18 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/24 12:56:36 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	ft_print_cmd(t_cmd **cmd)
 {
-	t_cmd	*ptr;
+	t_cmd	*node;
 
-	ptr = *cmd;
-	while (ptr != NULL)
+	node = *cmd;
+	while (node != NULL)
 	{
-		ft_printf("%s", ptr->str);
-		ptr = ptr->next;
+		ft_printf("%s", node->str);
+		node = node->next;
 	}
 }
 
@@ -31,7 +31,7 @@ void	ft_cmd_node(t_cmd **cmd, char *moove)
 
 	node = malloc(sizeof(t_cmd));
 	if (!node)
-		exit(1);
+		exit(0);
 	node->str = moove;
 	node->next = NULL;
 	if(*cmd == NULL)

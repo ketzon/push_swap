@@ -6,7 +6,7 @@
 /*   By: fbesson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 10:37:13 by fbesson           #+#    #+#             */
-/*   Updated: 2023/02/22 16:37:31 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/24 15:41:56 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
-int		ft_isdigit(int c);
+int		ft_isdigit(char *str);
 int		ft_isprint(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *memoire1, const void *memoire2, size_t n);
 int		ft_atoi(const char *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_cmp_nb(char	*a, char *b);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *src);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);

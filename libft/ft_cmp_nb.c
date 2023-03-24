@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_cmp_nb.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbesson@student.42.fr <marvin@42.fr>       +#+  +:+       +#+        */
+/*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 20:07:43 by fbesson@stude     #+#    #+#             */
-/*   Updated: 2023/03/24 15:39:05 by fbesson          ###   ########.fr       */
+/*   Created: 2023/03/24 14:46:54 by fbesson           #+#    #+#             */
+/*   Updated: 2023/03/24 14:53:34 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char *av)
+int	ft_cmp_nb(char *a, char *b)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (av[i] == '\0')
-		return (0);
-	if ((av[i] == '+' || av[i] == '-') && av[i + 1] != '\0')
+	j = 0;
+	if (a[i] == '+')
 		i++;
-	while (av[i])
+	if (b[j] == '+')
+		j++;
+	while (a[i] || b[j])
 	{
-		if (av[i] >= '0' && av[i] <= '9')
+		if (a[i] == b[j])
+		{
 			i++;
+			j++;
+		}
 		else
-			return (0);
+			return (1);
 	}
-	return (1);
+	return (0);
 }
