@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_stack.c                                      :+:      :+:    :+:   */
+/*   parse_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:06:29 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/16 16:51:32 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 15:39:43 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*ft_create_stack_node(int value)
 {
-	t_stack *node;	
+	t_stack	*node;	
 
 	node = (t_stack *)malloc(sizeof(t_stack));
 	if (node == NULL)
@@ -44,7 +44,7 @@ void	ft_add_stack_node(t_stack **list, t_stack *node)
 
 void	ft_parse_stack(char **av, t_stack **a, t_push *sort_list)
 {
-	int	i;
+	int		i;
 	t_push	*begin;
 
 	i = 1;

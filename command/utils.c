@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:35:43 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/25 13:40:42 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 15:57:44 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_cmd_node(t_cmd **cmd, char *moove)
 		exit(0);
 	node->str = moove;
 	node->next = NULL;
-	if(*cmd == NULL)
+	if (*cmd == NULL)
 		*cmd = node;
 	else
 	{

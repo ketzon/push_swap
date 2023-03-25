@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:52:01 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/16 16:51:32 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 15:52:01 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_push	*ft_partition(t_push *start, t_push *end)
 {
 	t_push	*left;
 	t_push	*right;
-	int	pivot;
+	int		pivot;
 
 	left = start;
 	right = end;
@@ -38,14 +38,15 @@ t_push	*ft_partition(t_push *start, t_push *end)
 			left = left->next;
 		ft_swap_node(left, right);
 	}
-	start->value = left->value; 
-	left->value = pivot; 
+	start->value = left->value;
+	left->value = pivot;
 	return (left);
 }
 
 int	ft_quick_sort(t_push *start, t_push *end)
 {
 	t_push	*pivot;
+
 	if (start->i >= end->i)
 		return (1);
 	pivot = ft_partition(start, end);

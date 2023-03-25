@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:30:53 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/25 14:10:27 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 15:37:54 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_calc_rot_a(t_stack *a, int target)
 {
-	size_t	len;
-	t_stack	*node;
+	size_t			len;
 	unsigned int	index;
+	t_stack			*node;
 
 	len = 0;
 	index = 0;
@@ -43,8 +43,8 @@ int	ft_calc_rot_a(t_stack *a, int target)
 
 void	ft_calc_rot_b(t_stack *b)
 {
-	t_stack	*node;
-	size_t		len;
+	t_stack			*node;
+	size_t			len;
 	unsigned int	index;
 
 	len = 0;
@@ -65,6 +65,7 @@ void	ft_calc_rot_b(t_stack *b)
 		index++;
 	}
 }
+
 int	ft_find_target(t_stack *a, int b)
 {
 	int	min;
@@ -88,8 +89,8 @@ int	ft_find_target(t_stack *a, int b)
 
 void	ft_sort_stack(t_cmd **cmd, t_stack **a, t_stack **b)
 {
-	t_stack *node;
-	int	target;
+	t_stack	*node;
+	int		target;
 
 	node = *b;
 	ft_calc_rot_b(node);
@@ -116,6 +117,7 @@ void	ft_sort_stack(t_cmd **cmd, t_stack **a, t_stack **b)
 void	ft_push_swap(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list)
 {
 	int	rotation_value;
+
 	if (*b == NULL)
 	{
 		ft_division(cmd, a, b, sort_list);

@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:23:35 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/24 21:42:25 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 16:00:20 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	rot_a(t_cmd **cmd, t_stack **a)
 {
-	t_stack *find;
-	t_stack *temp;
+	t_stack	*find;
+	t_stack	*temp;
 
 	find = *a;
 	if (find == NULL || find->next == NULL)
@@ -35,8 +35,8 @@ int	rot_a(t_cmd **cmd, t_stack **a)
 
 int	rot_b(t_cmd **cmd, t_stack **b)
 {
-	t_stack *find;	
-	t_stack *temp;	
+	t_stack	*find;	
+	t_stack	*temp;	
 
 	find = *b;
 	if (find == NULL || find->next == NULL)
@@ -44,7 +44,7 @@ int	rot_b(t_cmd **cmd, t_stack **b)
 	else
 	{
 		temp = *b;
-		*b = temp->next; 
+		*b = temp->next;
 		while (find->next != NULL)
 			find = find->next;
 		find->next = temp;
@@ -63,9 +63,9 @@ void	rot_ab(t_cmd **cmd, t_stack **a, t_stack **b)
 
 void	ft_replace_cmd(t_cmd **cmd, char *moove)
 {
-	t_cmd *previous;
-	t_cmd *last;
-	
+	t_cmd	*previous;
+	t_cmd	*last;
+
 	last = *cmd;
 	while (last->next != NULL)
 	{

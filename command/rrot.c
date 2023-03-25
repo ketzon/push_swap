@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:23:39 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/24 21:43:48 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 15:59:01 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	rrot_ab(t_cmd **cmd, t_stack **a, t_stack **b)
 
 int	rrot_a(t_cmd **cmd, t_stack **a)
 {
-	t_stack *find;
-	t_stack *previous;
+	t_stack	*find;
+	t_stack	*previous;
 
 	find = *a;
 	if (find == NULL || find->next == NULL)
@@ -45,11 +45,11 @@ int	rrot_a(t_cmd **cmd, t_stack **a)
 
 int	rrot_b(t_cmd **cmd, t_stack **b)
 {
-	t_stack *previous;
-	t_stack *find;
+	t_stack	*previous;
+	t_stack	*find;
 
 	find = *b;
-	if (find ==  NULL || find->next == NULL)
+	if (find == NULL || find->next == NULL)
 		return (0);
 	else
 	{

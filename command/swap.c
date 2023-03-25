@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:11:40 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/24 21:46:47 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 15:59:20 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	swap_a(t_cmd **cmd, t_stack *a)
 
 int	swap_b(t_cmd **cmd, t_stack *b)
 {
-	int temp;
+	int	temp;
 
 	if (b == NULL || b->next == NULL)
 		return (0);

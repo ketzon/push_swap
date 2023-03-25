@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:11:50 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/24 21:30:33 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 15:54:53 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	push_a(t_cmd **cmd, t_stack **a, t_stack **b)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (*b == NULL)
 		return (0);

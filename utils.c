@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/25 15:54:01 by fbesson           #+#    #+#             */
+/*   Updated: 2023/03/25 15:54:22 by fbesson          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_exit_msg(int fd, char *msg, int len, int status)
@@ -21,11 +33,10 @@ int	ft_abs(int v)
 		return (v);
 }
 
-
 ssize_t	ft_atoli(const char *str)
 {
-	int	i;
-	int	neg;
+	int		i;
+	int		neg;
 	ssize_t	res;
 
 	i = 0;

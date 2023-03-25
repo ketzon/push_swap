@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:19:03 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/24 21:00:34 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 15:53:45 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ static void	ft_rot_stack2(t_cmd **cmd, t_stack **a, t_stack **b, t_stack *node)
 		node->a_count -= 1;
 	}
 }
+
 void	ft_rot_stack(t_cmd **cmd, t_stack **a, t_stack **b)
 {
-	t_stack *node;
+	t_stack	*node;
 
-	node = find_min_count(*b);
+	node = ft_find_min_count(*b);
 	while (node->a_count > 0 && node->b_count > 0)
 	{
 		rot_ab(cmd, a, b);
@@ -55,10 +56,10 @@ void	ft_rot_stack(t_cmd **cmd, t_stack **a, t_stack **b)
 	ft_rot_stack2(cmd, a, b, node);
 }
 
-t_stack *find_min_count(t_stack *b)
+t_stack	*ft_find_min_count(t_stack *b)
 {
-	int	min;
-	int	current;
+	int		min;
+	int		current;
 	t_stack	*min_ptr;
 
 	min = b->sum;
