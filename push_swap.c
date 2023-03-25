@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:30:53 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/25 11:05:26 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 14:10:27 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_calc_rot_a(t_stack *a, int target)
 {
-	int	len;
-	int	index;
-	t_stack *node;
+	size_t	len;
+	t_stack	*node;
+	unsigned int	index;
 
 	len = 0;
 	index = 0;
@@ -43,9 +43,9 @@ int	ft_calc_rot_a(t_stack *a, int target)
 
 void	ft_calc_rot_b(t_stack *b)
 {
-	int	len;
-	int	index;
 	t_stack	*node;
+	size_t		len;
+	unsigned int	index;
 
 	len = 0;
 	index = 0;
@@ -131,5 +131,5 @@ void	ft_push_swap(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list)
 	else
 		while ((*a)->value != 0)
 			rot_a(cmd, a);
-	ft_print_cmd(cmd);
+	ft_exit_cmd(cmd, 0);
 }

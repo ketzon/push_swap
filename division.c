@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:15:31 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/23 17:24:38 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 14:05:20 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@ static int	ft_fix_clock(int index, int cw_index, int ccw_index)
 	{
 		if (cw_index == -1)
 			return (2);
-		else if(cw_index < index / 2)
+		else if (cw_index < index / 2)
 			return (1);
 		else
 			return (0);
-
 	}
 	else if (cw_index < index - ccw_index)
 		return (1);
@@ -53,9 +52,9 @@ int	ft_short_rot(t_stack *a, int min, int max)
 
 void	ft_quick_rot(t_cmd **cmd, t_stack **a, t_stack **b, t_push *sort_list)
 {
-	int	index;
+	int			index;
 	static int	min;
-	static int 	max;
+	static int	max;
 
 	if (max != 0)
 	{
@@ -69,17 +68,16 @@ void	ft_quick_rot(t_cmd **cmd, t_stack **a, t_stack **b, t_push *sort_list)
 		index = ft_short_rot(*a, min, max);
 		if (index == 1)
 			ft_clockwise(cmd, a, b, max);
-		else if(index == 0)
+		else if (index == 0)
 			ft_cclockwise(cmd, a, b, max);
 		else
 			break ;
 	}
-	
 }
 
 void	ft_division(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list)
 {
-	t_push *current;
+	t_push	*current;
 
 	current = *sort_list;
 	while (current->next != NULL)

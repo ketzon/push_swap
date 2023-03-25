@@ -65,7 +65,7 @@ int	ft_check_stack(int ac, t_stack *a);
 t_push 	*ft_create_node(int value, int i);
 t_push	*ft_last_node(t_push *node);
 void	ft_check_input(char **av);
-void	ft_print_cmd(t_cmd **av);
+void	ft_exit_cmd(t_cmd **av, int status);
 void	ft_check_size(char **av);	
 int	swap_a(t_cmd **cmd, t_stack *a);
 int	swap_b(t_cmd **cmd, t_stack *b);

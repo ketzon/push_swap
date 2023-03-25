@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:46 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/25 11:04:03 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 14:06:50 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	ft_sort_five(t_cmd **cmd, t_stack **a, t_stack **b, int ac)
 		rot_a(cmd, a);
 	else if (n0 > n2 && n0 < n1)
 		rrot_a(cmd, a);
-
 }
 
 void	ft_sort_low(t_cmd **cmd, t_stack **a, t_stack **b, int ac)
@@ -46,19 +45,16 @@ void	ft_sort_low(t_cmd **cmd, t_stack **a, t_stack **b, int ac)
 	{
 		ft_sort_five(cmd, a, b, ac);
 		if (*b == NULL)
-		{
-			ft_print_cmd(cmd);
-			exit (0);
-		}
+			ft_exit_cmd(cmd, 0);
 	}
 }
 
 int	main(int ac, char **av)
 {
-	t_stack **a;
-	t_stack **b;
+	t_stack	**a;
+	t_stack	**b;
 	t_cmd	**cmd;
-	t_push **sort_list;
+	t_push	**sort_list;
 
 	if (ac == 1)
 		return (1);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:31:31 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/24 20:33:09 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 14:01:25 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,17 @@ int	ft_check_zero(char *av)
 		return (1);
 }
 
-void	ft_check_input(char **av)	
+void	ft_check_input(char **av)
 {
-	int	i;
-	static	int	zero_count;
+	unsigned int	i;
+	static int		zero_count;
 
 	i = 1;
 	while (av[i] != NULL)
 	{
-		if (!av[i][0])
-			ft_exit_msg(2, "Error\n", 6, 1);
 		while (av[i])
 		{
-			if (!ft_isdigit(av[i])) 
+			if (!ft_isdigit(av[i]))
 				ft_exit_msg(2, "Error\n", 6, 1);
 			zero_count += ft_check_zero(av[i]);
 			i++;
@@ -73,8 +71,8 @@ void	ft_check_input(char **av)
 
 void	ft_check_size(char **av)
 {
-	unsigned int i;
-	ssize_t	value;
+	unsigned int	i;
+	ssize_t			value;
 
 	i = 1;
 	while (av[i] != NULL)
