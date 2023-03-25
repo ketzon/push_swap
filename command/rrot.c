@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:23:39 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/23 15:06:08 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/24 21:43:48 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	rrot_ab(t_cmd **cmd, t_stack **a, t_stack **b)
 {
 	rrot_a(cmd, a);
 	rrot_b(cmd, b);
+	ft_replace_cmd(cmd, "rrr\n");
 	return (0);
 }
 

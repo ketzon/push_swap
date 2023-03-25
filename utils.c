@@ -47,3 +47,26 @@ ssize_t	ft_atoli(const char *str)
 		return (-1);
 	return (res * neg);
 }
+
+int	ft_check_max_min(t_stack *a, int b)
+{
+	int	min;
+	int	max;
+	int	current;
+
+	min = a->value;
+	max = a->value;
+	while (a != NULL)
+	{
+		current = a->value;
+		if (current < min)
+			min = current;
+		else if (current > max)
+			max = current;
+		a = a->next;
+	}
+	if (b < min || b > max)
+		return (min);
+	else
+		return (-1);
+}

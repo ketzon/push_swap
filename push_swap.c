@@ -6,37 +6,11 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:30:53 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/24 20:37:53 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/25 11:05:26 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_calc_rot_b(t_stack *b)
-{
-	int	len;
-	int	index;
-	t_stack	*node;
-
-	len = 0;
-	index = 0;
-	node = b;
-	while (b != NULL)
-	{
-		b = b->next;
-		len++;
-	}
-	while (node != NULL)
-	{
-		if (len / 2 < index)
-			node->b_count = index - len;
-		else
-			node->b_count = index;
-		node = node->next;
-		index++;
-	}
-}
-
 
 int	ft_calc_rot_a(t_stack *a, int target)
 {
@@ -67,27 +41,29 @@ int	ft_calc_rot_a(t_stack *a, int target)
 	return (0);
 }
 
-int	ft_check_max_min(t_stack *a, int b)
+void	ft_calc_rot_b(t_stack *b)
 {
-	int	min;
-	int	max;
-	int	current;
+	int	len;
+	int	index;
+	t_stack	*node;
 
-	min = a->value;
-	max = a->value;
-	while (a != NULL)
+	len = 0;
+	index = 0;
+	node = b;
+	while (b != NULL)
 	{
-		current = a->value;
-		if (current < min)
-			min = current;
-		else if (current > max)
-			max = current;
-		a = a->next;
+		b = b->next;
+		len++;
 	}
-	if (b < min || b > max)
-		return (min);
-	else
-		return (-1);
+	while (node != NULL)
+	{
+		if (len / 2 < index)
+			node->b_count = index - len;
+		else
+			node->b_count = index;
+		node = node->next;
+		index++;
+	}
 }
 int	ft_find_target(t_stack *a, int b)
 {

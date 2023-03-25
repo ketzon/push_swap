@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:23:35 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/23 17:51:54 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/24 21:42:25 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	rot_a(t_cmd **cmd, t_stack **a)
 {
 	t_stack *find;
 	t_stack *temp;
+
 	find = *a;
 	if (find == NULL || find->next == NULL)
 		return (0);
@@ -57,10 +58,10 @@ void	rot_ab(t_cmd **cmd, t_stack **a, t_stack **b)
 {
 	rot_a(cmd, a);
 	rot_b(cmd, b);
-	ft_replace_ra_rb_with_rr(cmd, "rr\n");
+	ft_replace_cmd(cmd, "rr\n");
 }
 
-void	ft_replace_ra_rb_with_rr(t_cmd **cmd, char *rr)
+void	ft_replace_cmd(t_cmd **cmd, char *moove)
 {
 	t_cmd *previous;
 	t_cmd *last;
@@ -73,5 +74,5 @@ void	ft_replace_ra_rb_with_rr(t_cmd **cmd, char *rr)
 	}
 	free(previous->next);
 	previous->next = NULL;
-	previous->str = rr;
+	previous->str = moove;
 }

@@ -6,9 +6,10 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:11:40 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/23 15:11:09 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/24 21:46:47 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../push_swap.h"
 
 int	swap_a(t_cmd **cmd, t_stack *a)
@@ -41,4 +42,11 @@ int	swap_b(t_cmd **cmd, t_stack *b)
 		ft_cmd_node(cmd, "sb\n");
 	}
 	return (0);
+}
+
+void	swap_ab(t_cmd **cmd, t_stack *a, t_stack *b)
+{
+	swap_a(cmd, a);
+	swap_b(cmd, b);
+	ft_replace_cmd(cmd, "ss\n");
 }

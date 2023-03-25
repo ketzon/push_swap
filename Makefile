@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRC = command/rot.c command/rrot.c command/utils.c command/push.c command/swap.c push_swap.c parse_av.c utils.c check.c quick_sort.c parse_stack.c sort_stack.c sort_low.c division.c rotation.c \
+SRC = command/rot.c command/rrot.c command/utils.c command/push.c command/swap.c push_swap.c parse_input.c utils.c checker.c quick_sort.c parse_sort.c division.c rotation.c \
 	main.c command/clock.c
 
 OBJ = $(SRC:.c=.o)

@@ -87,9 +87,8 @@ int	ft_abs(int v);
 void	ft_clockwise(t_cmd **cmd, t_stack **a, t_stack **b, int max);
 void	ft_cclockwise(t_cmd **cmd, t_stack **a, t_stack **b, int max);
 void	rot_ab(t_cmd **cmd, t_stack **a, t_stack **b);
-void	ft_replace_ra_rb_with_rr(t_cmd **cmd, char *rr);
+void	ft_replace_cmd(t_cmd **cmd, char *moove);
 ssize_t	ft_atoli(const char *str);
-
-/* void	test(char *str); */
+void	swap_ab(t_cmd **cmd, t_stack *a, t_stack *b);
 
 #endif
