@@ -6,7 +6,7 @@
 #    By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 14:54:14 by fbesson           #+#    #+#              #
-#    Updated: 2023/03/24 14:54:16 by fbesson          ###   ########.fr        #
+#    Updated: 2023/03/25 12:50:55 by fbesson          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NO_COLOR = \033[m
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra -g -w
 
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
@@ -29,29 +29,30 @@ ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
 ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
 printf.c put.c ft_cmp_nb.c \
 
-
 BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
 ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c \
 
 OBJS = $(SRCS:.c=.o) 
 
 OBJS_BONUS = $(BONUS:.c=.o)
+ 
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@ 
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS) 
 
 bonus: $(OBJS) $(OBJS_BONUS)
-	ar -rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+	@ar -rcs $(NAME) $(OBJS) $(OBJS_BONUS)
 
 clean:
-	@echo "All .o deleted:$(OK_COLOR) OK!$(NO_COLOR)"
-	@/bin/rm -f $(OBJS) $(OBJS_BONUS)
+	@/bin/rm -f $(OBJS) $(OBJS_BONUS) 
 
 fclean: clean
-	@echo "Archive deleted:$(OK_COLOR) OK!$(NO_COLOR)"
-	@/bin/rm -f $(NAME)
-
+	@/bin/rm -f $(NAME) 
 
 re: fclean all
+
+

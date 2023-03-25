@@ -4,5 +4,5 @@
 push_swap
 tags
 push_swap_tester
-checker_linux
+./checker_linux
 
