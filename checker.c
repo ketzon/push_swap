@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:31:31 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/25 14:01:25 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/27 17:03:55 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,6 @@ int	ft_check_stack(int ac, t_stack *a)
 	{
 		if (min > a->next->value)
 			return (0);
-		else if (min == a->next->value)
-			ft_exit_msg(2, "Error\n", 6, 1);
 		a = a->next;
 		min = a->value;
 	}
