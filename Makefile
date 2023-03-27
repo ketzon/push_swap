@@ -31,11 +31,11 @@ bin/command_%.o: command/%.c
 	@gcc $(FLAGS) -c $^ -o $@
 
 $(LIBFT):
+	@$(ECHO) "$(GRE)● Adding libft to Push_swap ⚙️ $(EOC)"
 	@make -C $(LIBFT_DIR) -s
 
 $(NAME): $(OBJ_BOTH) $(BIN)/$(MANDATORY).o $(LIBFT)
-	@$(ECHO) "$(GRE)● Adding libft to $@ ⚙️ $(EOC)"
-	@$(ECHO) "$(GRE)● Compiling $@ ⚙️ $(EOC)"
+	@$(ECHO) "$(GRE)● Push_swap ready ⚙️ $(EOC)"
 	@gcc $(FLAGS) $(LIBFT) $^ -o $@
 
 clean:
