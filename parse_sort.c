@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:06:29 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/25 15:39:43 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/27 16:53:55 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_add_stack_node(t_stack **list, t_stack *node)
 	}
 }
 
-void	ft_parse_stack(char **av, t_stack **a, t_push *sort_list)
+void	ft_parse_sort(char **av, t_stack **a, t_push *sort_list)
 {
 	int		i;
 	t_push	*begin;

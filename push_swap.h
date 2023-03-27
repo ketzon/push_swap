@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:40:23 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/25 15:50:05 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/27 16:54:16 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct s_cmd
 }	t_cmd;
 
 void	ft_sort_five(t_cmd **cmd, t_stack **a, t_stack **b, int ac);
-void	ft_parse_stack(char **av, t_stack **a, t_push *sort_list);
+void	ft_parse_sort(char **av, t_stack **a, t_push *sort_list);
 int		ft_exit_msg(int fd, char *msg, int len, int status);
 int		push_b(t_cmd **cmd, t_stack **a, t_stack **b);
 int		push_a(t_cmd **cmd, t_stack **a, t_stack **b);
