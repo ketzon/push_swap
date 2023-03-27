@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:46 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/27 16:53:40 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/27 17:25:13 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int	main(int ac, char **av)
 	if (sort_list == NULL || a == NULL || b == NULL || cmd == NULL)
 		return (1);
 	ft_check_input(av);
-	ft_check_size(av);
 	ft_parse_input(av, sort_list);
 	ft_quick_sort(*sort_list, ft_last_node(*sort_list));
 	ft_parse_sort(av, a, *sort_list);
