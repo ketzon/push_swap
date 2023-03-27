@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:36:39 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/25 16:01:37 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/27 18:14:17 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_cclockwise(t_cmd **cmd, t_stack **a, t_stack **b, int max)
 		last_b = last_b->next;
 	while ((*a)->value > max)
 	{
-		if (*b != NULL && (*b)->next != NULL && ((*b)->value < last_b->value))
+		if (*b && (*b)->next != NULL && ((*b)->value < last_b->value))
 			rrot_ab(cmd, a, b);
 		else
 			rrot_a(cmd, a);
