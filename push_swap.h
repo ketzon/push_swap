@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:40:23 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/27 16:54:16 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/28 15:51:12 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ void	rot_ab(t_cmd **cmd, t_stack **a, t_stack **b);
 void	ft_replace_cmd(t_cmd **cmd, char *moove);
 ssize_t	ft_atoli(const char *str);
 void	swap_ab(t_cmd **cmd, t_stack *a, t_stack *b);
+int		ft_calc_rot(t_stack *a, int min, int max);
 
 #endif
