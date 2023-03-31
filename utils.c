@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:54:01 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/31 20:09:57 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/31 21:41:26 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_exit_msg(int fd, char *msg, int len, int status, t_ptr *p)
 {
-	write (fd, msg, len);
 	ft_free(p);
+	write (fd, msg, len);
 	exit (status);
 }
 
