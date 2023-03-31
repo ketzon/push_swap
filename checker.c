@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:31:31 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/31 20:06:29 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/31 21:17:27 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,24 +50,22 @@ int	ft_check_zero(char *av)
 int	ft_check_input(char **av, t_ptr *p)
 {
 	unsigned int	i;
-	static int		zero_count;
+	int		zero_count;
 
 	i = 1;
+	zero_count = 0;
 	while (av[i] != NULL)
 	{
-		while (av[i])
-		{
-			if (!ft_isdigit(av[i]))
-				ft_exit_msg(1, "Error\n", 6, 0, p);
-			zero_count += ft_check_zero(av[i]);
-			i++;
-		}
+		if (!ft_isdigit(av[i]))
+			ft_exit_msg(1, "Error\n", 6, 0, p);
+		zero_count += ft_check_zero(av[i]);
 		if (zero_count >= 2)
 			ft_exit_msg(1, "Error\n", 6, 0, p);
 		if (ft_check_doublon(av))
 			ft_exit_msg(1, "Error\n", 6, 0, p);
 		if (ft_check_size(av))
 			ft_exit_msg(1, "Error\n", 6, 0, p);
+		i++;
 	}
 	return (0);
 }
