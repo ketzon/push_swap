@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:02:17 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/31 19:26:12 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/31 21:59:23 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,9 @@ void ft_free(t_ptr *p)
 		ft_free_stack(*p->b);
 	if (p->cmd && *p->cmd)
 		ft_free_cmd(*p->cmd);
+	free(p->sort_list);
+	free(p->a);
+	free(p->b);
+	free(p->cmd);
 	free(p);
 }
