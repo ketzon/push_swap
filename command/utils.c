@@ -6,13 +6,13 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:35:43 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/25 15:57:44 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/31 20:10:18 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_exit_cmd(t_cmd **cmd, int status)
+void	ft_exit_cmd(t_cmd **cmd, int status, t_ptr *p)
 {
 	t_cmd	*node;
 
@@ -22,6 +22,7 @@ void	ft_exit_cmd(t_cmd **cmd, int status)
 		ft_printf("%s", node->str);
 		node = node->next;
 	}
+	ft_free(p);
 	exit (status);
 }
 

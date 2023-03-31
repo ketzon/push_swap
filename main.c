@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:46 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/27 17:25:13 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/31 20:03:45 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,39 +37,37 @@ void	ft_sort_five(t_cmd **cmd, t_stack **a, t_stack **b, int ac)
 		rrot_a(cmd, a);
 }
 
-void	ft_sort_low(t_cmd **cmd, t_stack **a, t_stack **b, int ac)
+void	ft_sort_low(t_cmd **cmd, t_stack **a, t_stack **b, int ac, t_ptr *p)
 {
 	if (ac == 3)
-		ft_exit_msg(1, "sa\n", 3, 0);
+		ft_exit_msg(1, "sa\n", 3, 0, p);
 	else if (ac <= 6)
 	{
 		ft_sort_five(cmd, a, b, ac);
 		if (*b == NULL)
-			ft_exit_cmd(cmd, 0);
+			ft_exit_cmd(cmd, 0, p);
 	}
 }
 
 int	main(int ac, char **av)
 {
-	t_stack	**a;
-	t_stack	**b;
-	t_cmd	**cmd;
-	t_push	**sort_list;
+	t_ptr 	*p;
 
 	if (ac == 1)
 		return (1);
-	a = (t_stack **)malloc(sizeof(t_stack *));
-	b = (t_stack **)malloc(sizeof(t_stack *));
-	cmd = (t_cmd **)malloc(sizeof(t_stack *));
-	sort_list = (t_push **)malloc(sizeof(t_push *));
-	if (sort_list == NULL || a == NULL || b == NULL || cmd == NULL)
+	p = (t_ptr *)malloc(sizeof(t_ptr));
+	p->a = (t_stack **)malloc(sizeof(t_stack *));
+	p->b = (t_stack **)malloc(sizeof(t_stack *));
+	p->cmd = (t_cmd **)malloc(sizeof(t_stack *));
+	p->sort_list = (t_push **)malloc(sizeof(t_push *));
+	if (p == NULL || p->sort_list == NULL || p->a == NULL || p->b == NULL || p->cmd == NULL)
 		return (1);
-	ft_check_input(av);
-	ft_parse_input(av, sort_list);
-	ft_quick_sort(*sort_list, ft_last_node(*sort_list));
-	ft_parse_sort(av, a, *sort_list);
-	ft_check_stack(ac, *a);
-	ft_sort_low(cmd, a, b, ac);
-	ft_push_swap(cmd, a, b, sort_list);
+	ft_check_input(av, p);
+	ft_parse_input(av, p->sort_list);
+	ft_quick_sort(*p->sort_list, ft_last_node(*p->sort_list));
+	ft_parse_sort(av, p->a, *p->sort_list);
+	ft_check_stack(ac, *p->a, p);
+	ft_sort_low(p->cmd, p->a, p->b, ac, p);
+	ft_push_swap(p->cmd, p->a, p->b, p->sort_list, p);
 	return (0);
 }

@@ -3,7 +3,7 @@ FLAGS = -Wall -Wextra -Werror -g
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 SRCS = checker main division parse_input parse_sort push_swap quick_sort \
-rotation utils
+rotation utils free
 COMMAND_SRCS = clock push rot rrot swap utils
 
 MANDATORY = push_swap

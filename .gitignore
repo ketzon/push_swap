@@ -4,5 +4,7 @@
 push_swap
 tags
 push_swap_tester
+push_swap_leak_tester
+test_leak.sh
 ./checker_linux
 bin

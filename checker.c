@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:31:31 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/27 17:24:41 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/03/31 20:06:29 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_check_zero(char *av)
 		return (1);
 }
 
-void	ft_check_input(char **av)
+int	ft_check_input(char **av, t_ptr *p)
 {
 	unsigned int	i;
 	static int		zero_count;
@@ -58,19 +58,21 @@ void	ft_check_input(char **av)
 		while (av[i])
 		{
 			if (!ft_isdigit(av[i]))
-				ft_exit_msg(2, "Error\n", 6, 1);
+				ft_exit_msg(1, "Error\n", 6, 0, p);
 			zero_count += ft_check_zero(av[i]);
 			i++;
 		}
 		if (zero_count >= 2)
-			ft_exit_msg(2, "Error\n", 6, 1);
+			ft_exit_msg(1, "Error\n", 6, 0, p);
 		if (ft_check_doublon(av))
-			ft_exit_msg(2, "Error\n", 6, 1);
+			ft_exit_msg(1, "Error\n", 6, 0, p);
+		if (ft_check_size(av))
+			ft_exit_msg(1, "Error\n", 6, 0, p);
 	}
-	ft_check_size(av);
+	return (0);
 }
 
-void	ft_check_size(char **av)
+int	ft_check_size(char **av)
 {
 	unsigned int	i;
 	ssize_t			value;
@@ -80,17 +82,21 @@ void	ft_check_size(char **av)
 	{
 		value = ft_atoli(av[i]);
 		if (value > INT_MAX || value < INT_MIN)
-			ft_exit_msg(2, "Error\n", 6, 1);
+				return (1);
 		i++;
 	}
+	return (0);
 }
 
-int	ft_check_stack(int ac, t_stack *a)
+int	ft_check_stack(int ac, t_stack *a, t_ptr *p)
 {
 	int	min;
 
 	if (ac == 2)
-		exit(0);
+	{
+		ft_free(p);
+		exit (0);
+	}
 	min = a->value;
 	while (a->next != NULL)
 	{
@@ -99,5 +105,6 @@ int	ft_check_stack(int ac, t_stack *a)
 		a = a->next;
 		min = a->value;
 	}
-	exit(0);
+	ft_free(p);
+	exit (0);
 }
