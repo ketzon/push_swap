@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:40:23 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/31 19:41:02 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/04/01 14:14:49 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ enum e_size {
 	INT_MAX = 2147483647,
 	INT_MIN = -2147483648
 };
-
 
 typedef struct s_push
 {
@@ -52,15 +51,15 @@ typedef struct s_cmd
 
 typedef struct s_ptr
 {
-		t_stack	**a;
-		t_stack	**b;
-		t_cmd	**cmd;
-		t_push	**sort_list;
-}		t_ptr;
+	t_stack	**a;
+	t_stack	**b;
+	t_cmd	**cmd;
+	t_push	**sort_list;
+}	t_ptr;
 
 void	ft_sort_five(t_cmd **cmd, t_stack **a, t_stack **b, int ac);
 void	ft_parse_sort(char **av, t_stack **a, t_push *sort_list);
-int		ft_exit_msg(int fd, char *msg, int len, int status, t_ptr *p);
+int		ft_exit_msg(int fd, char *msg, int status, t_ptr *p);
 int		push_b(t_cmd **cmd, t_stack **a, t_stack **b);
 int		push_a(t_cmd **cmd, t_stack **a, t_stack **b);
 void	ft_parse_input(char **av, t_push **sort_list);
@@ -83,9 +82,9 @@ int		rot_b(t_cmd **cmd, t_stack **b);
 int		rrot_a(t_cmd **cmd, t_stack **a);
 int		rrot_b(t_cmd **cmd, t_stack **b);
 int		rrot_ab(t_cmd **cmd, t_stack **a, t_stack **b);
-void	ft_push_swap(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list, t_ptr *ptr);
+void	ft_push_swap(t_ptr *p);
 void	ft_division(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list);
-void	ft_sort_low(t_cmd **cmd, t_stack **a, t_stack **b, int ac, t_ptr *p);
+void	ft_sort_low(int ac, t_ptr *p);
 int		ft_find_target(t_stack *a, int b);
 int		ft_check_max_min(t_stack *a, int b);
 int		ft_calc_rot_a(t_stack *a, int target);

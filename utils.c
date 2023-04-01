@@ -6,16 +6,16 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:54:01 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/31 21:41:26 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/04/01 14:04:04 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_exit_msg(int fd, char *msg, int len, int status, t_ptr *p)
+int	ft_exit_msg(int fd, char *msg, int status, t_ptr *p)
 {
 	ft_free(p);
-	write (fd, msg, len);
+	write (fd, msg, ft_strlen(msg));
 	exit (status);
 }
 

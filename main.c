@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:46 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/31 21:51:35 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/04/01 14:17:01 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,21 @@ void	ft_sort_five(t_cmd **cmd, t_stack **a, t_stack **b, int ac)
 		rrot_a(cmd, a);
 }
 
-void	ft_sort_low(t_cmd **cmd, t_stack **a, t_stack **b, int ac, t_ptr *p)
+void	ft_sort_low(int ac, t_ptr *p)
 {
 	if (ac == 3)
-		ft_exit_msg(1, "sa\n", 3, 0, p);
+		ft_exit_msg(1, "sa\n", 0, p);
 	else if (ac <= 6)
 	{
-		ft_sort_five(cmd, a, b, ac);
-		if (*b == NULL)
-			ft_exit_cmd(cmd, 0, p);
+		ft_sort_five(p->cmd, p->a, p->b, ac);
+		if (*p->b == NULL)
+			ft_exit_cmd(p->cmd, 0, p);
 	}
 }
 
 int	main(int ac, char **av)
 {
-	t_ptr 	*p;
+	t_ptr	*p;
 
 	if (ac == 1)
 		return (1);
@@ -60,15 +60,18 @@ int	main(int ac, char **av)
 	p->b = (t_stack **)malloc(sizeof(t_stack *));
 	p->cmd = (t_cmd **)malloc(sizeof(t_stack *));
 	p->sort_list = (t_push **)malloc(sizeof(t_push *));
-	if (p == NULL || p->sort_list == NULL || p->a == NULL || p->b == NULL || p->cmd == NULL)
+	if (p->sort_list == NULL || p->a == NULL || p->b == NULL || p->cmd == NULL \
+		|| p == NULL)
+	{
+		ft_free(p);
 		return (1);
+	}
 	ft_check_input(av, p);
 	ft_parse_input(av, p->sort_list);
 	ft_quick_sort(*p->sort_list, ft_last_node(*p->sort_list));
 	ft_parse_sort(av, p->a, *p->sort_list);
 	ft_check_stack(ac, *p->a, p);
-	ft_sort_low(p->cmd, p->a, p->b, ac, p);
-	ft_push_swap(p->cmd, p->a, p->b, p->sort_list, p);
-	ft_free(p);
+	ft_sort_low(ac, p);
+	ft_push_swap(p);
 	return (0);
 }

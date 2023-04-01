@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:02:17 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/31 21:59:23 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/04/01 14:17:35 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_free_cmd(t_cmd *node)
 	}
 }
 
-void ft_free(t_ptr *p)
+void	ft_free(t_ptr *p)
 {
 	if (p->sort_list && *p->sort_list)
 		ft_free_push(*p->sort_list);

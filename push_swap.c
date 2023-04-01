@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:30:53 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/31 19:07:15 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/04/01 14:13:16 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,24 +114,24 @@ void	ft_sort_stack(t_cmd **cmd, t_stack **a, t_stack **b)
 	push_a(cmd, a, b);
 }
 
-void	ft_push_swap(t_cmd **cmd, t_stack **a, t_stack **b, t_push **sort_list, t_ptr *p)
+void	ft_push_swap(t_ptr *p)
 {
 	int	rotation_value;
 
-	if (*b == NULL)
+	if (*p->b == NULL)
 	{
-		ft_division(cmd, a, b, sort_list);
-		if (*a == NULL)
-			push_a(cmd, a, b);
+		ft_division(p->cmd, p->a, p->b, p->sort_list);
+		if (*p->a == NULL)
+			push_a(p->cmd, p->a, p->b);
 	}
-	while (*b != NULL)
-		ft_sort_stack(cmd, a, b);
-	rotation_value = ft_calc_rot_a(*a, 0);
+	while (*p->b != NULL)
+		ft_sort_stack(p->cmd, p->a, p->b);
+	rotation_value = ft_calc_rot_a(*p->a, 0);
 	if (rotation_value < 0)
-		while ((*a)->value != 0)
-			rrot_a(cmd, a);
+		while ((*p->a)->value != 0)
+			rrot_a(p->cmd, p->a);
 	else
-		while ((*a)->value != 0)
-			rot_a(cmd, a);
-	ft_exit_cmd(cmd, 0, p);
+		while ((*p->a)->value != 0)
+			rot_a(p->cmd, p->a);
+	ft_exit_cmd(p->cmd, 0, p);
 }
