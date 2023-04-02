@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:46 by fbesson           #+#    #+#             */
-/*   Updated: 2023/04/01 16:18:50 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/04/02 12:53:05 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ int	main(int ac, char **av)
 	if (ac == 1)
 		return (1);
 	p = (t_ptr *)malloc(sizeof(t_ptr));
-	p->a = (t_stack **)malloc(sizeof(t_stack *));
-	p->b = (t_stack **)malloc(sizeof(t_stack *));
-	p->cmd = (t_cmd **)malloc(sizeof(t_cmd *));
-	p->sort_list = (t_push **)malloc(sizeof(t_push *));
+	p->a = (t_stack **)ft_calloc(1, sizeof(t_stack *));
+	p->b = (t_stack **)ft_calloc(1, sizeof(t_stack *));
+	p->cmd = (t_cmd **)ft_calloc(1, sizeof(t_cmd *));
+	p->sort_list = (t_push **)ft_calloc(1, sizeof(t_push *));
 	if (p->sort_list == NULL || p->a == NULL || p->b == NULL || p->cmd == NULL \
 		|| p == NULL)
 	{
