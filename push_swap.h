@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:40:23 by fbesson           #+#    #+#             */
-/*   Updated: 2023/04/01 14:14:49 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/04/04 19:42:25 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ typedef struct s_ptr
 	t_stack	**b;
 	t_cmd	**cmd;
 	t_push	**sort_list;
+	char	**av;
+	int		ac;
 }	t_ptr;
 
 void	ft_sort_five(t_cmd **cmd, t_stack **a, t_stack **b, int ac);

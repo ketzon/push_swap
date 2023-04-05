@@ -6,7 +6,7 @@
 /*   By: fbesson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 10:37:13 by fbesson           #+#    #+#             */
-/*   Updated: 2023/03/24 15:41:56 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/04/05 13:03:52 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,10 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstlast(t_list *lst);
+
+// NEW
+
+char	**ft_process_av(int ac, char **av);
+int		ft_count_ac(char **av);
 
 #endif

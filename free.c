@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:02:17 by fbesson           #+#    #+#             */
-/*   Updated: 2023/04/01 14:17:35 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/04/05 12:45:18 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,18 @@ void	ft_free_cmd(t_cmd *node)
 	}
 }
 
+void	ft_free_av(char **av)
+{
+	int	i;
+
+	i = 0;
+	while (av && av[i])
+	{
+		free(av[i]);
+		i++;
+	}
+}
+
 void	ft_free(t_ptr *p)
 {
 	if (p->sort_list && *p->sort_list)
@@ -58,9 +70,12 @@ void	ft_free(t_ptr *p)
 		ft_free_stack(*p->b);
 	if (p->cmd && *p->cmd)
 		ft_free_cmd(*p->cmd);
+	if (p->av && *p->av)
+		ft_free_av(p->av);
 	free(p->sort_list);
 	free(p->a);
 	free(p->b);
 	free(p->cmd);
+	free(p->av);
 	free(p);
 }

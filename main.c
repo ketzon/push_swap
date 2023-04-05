@@ -6,7 +6,7 @@
 /*   By: fbesson <fbesson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:43:46 by fbesson           #+#    #+#             */
-/*   Updated: 2023/04/02 13:12:50 by fbesson          ###   ########.fr       */
+/*   Updated: 2023/04/05 13:05:09 by fbesson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,29 +49,28 @@ void	ft_sort_low(int ac, t_ptr *p)
 	}
 }
 
-int	main(int ac, char **av)
+int	main(int old_ac, char **old_av)
 {
 	t_ptr	*p;
 
-	if (ac == 1)
+	if (old_ac == 1)
 		return (1);
 	p = (t_ptr *)malloc(sizeof(t_ptr));
+	p -> av = ft_process_av(old_ac, old_av);
+	p -> ac = ft_count_ac(p -> av);
 	p -> a = (t_stack **)ft_calloc(1, sizeof(t_stack *));
 	p -> b = (t_stack **)ft_calloc(1, sizeof(t_stack *));
 	p -> cmd = (t_cmd **)ft_calloc(1, sizeof(t_cmd *));
 	p -> sort_list = (t_push **)ft_calloc(1, sizeof(t_push *));
 	if (p->sort_list == NULL || p->a == NULL || p->b == NULL || p->cmd == NULL \
 		|| p == NULL)
-	{
-		ft_free(p);
-		return (1);
-	}
-	ft_check_input(av, p);
-	ft_parse_input(av, p->sort_list);
+		return (ft_free(p), 1);
+	ft_check_input(p->av, p);
+	ft_parse_input(p->av, p->sort_list);
 	ft_quick_sort(*p->sort_list, ft_last_node(*p->sort_list));
-	ft_parse_sort(av, p->a, *p->sort_list);
-	ft_check_stack(ac, *p->a, p);
-	ft_sort_low(ac, p);
+	ft_parse_sort(p->av, p->a, *p->sort_list);
+	ft_check_stack(p->ac, *p->a, p);
+	ft_sort_low(p->ac, p);
 	ft_push_swap(p);
 	return (0);
 }
